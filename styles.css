@@ -1,0 +1,40 @@
+.buttonTable form button {
+    min-height: 90px;
+    width: 90%;
+    margin: 25px;
+    text-transform: uppercase;
+
+}
+
+.evaluation_qualitytableButtons tbody tr td {
+    padding: .30rem;
+    vertical-align: center;
+    width: 30%;
+}
+
+#page-admin-report-evaluation_quality.lastupdate {
+    font-size: small;
+
+}
+
+.divButtonsExportChart {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100% !important;
+}
+
+.buttonsExportChart {
+    float: inline-end !important;
+    margin-right: 20px !important;
+}
+
+.divForm {
+    width: 100%;
+}
+
+.divCell {
+    width: 25%;
+    float: left;
+}
+
