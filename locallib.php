@@ -34,7 +34,7 @@ foreach ($classfiles as $classfile) {
     }
 }
 
-$classfiles = new DirectoryIterator($CFG->dirroot . '/admin/tool/courserequeststomanagers/core/');
+$classfiles = new DirectoryIterator($CFG->dirroot . '/admin/tool/courserequeststomanagers/classes/');
 foreach ($classfiles as $classfile) {
     if ($classfile->isDot()) {
         continue;

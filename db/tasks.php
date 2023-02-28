@@ -15,18 +15,23 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version information
+ * report_coursesize tasks
  *
- * @package    tool_requestcoursemanager
- * @copyright  2014 Catalyst IT {@link http://www.catalyst.net.nz}
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   report_coursesize
+ * @copyright Catalyst IT
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version  = 2023022804;
-$plugin->requires = 2018120300; // Requires 3.6.
-$plugin->component = 'tool_courserequeststomanagers';
-$plugin->release = '4.1';
-$plugin->maturity  = MATURITY_STABLE;
-$plugin->supported = [39, 400];
+$tasks = array(
+    array(
+        'classname' => '\tool_courserequeststomanagers\task\report_async',
+        'blocking'  => 0,
+        'minute'    => '*',
+        'hour'      => '*',
+        'day'       => '*',
+        'dayofweek' => '*',
+        'month'     => '*'
+    ),
+);
