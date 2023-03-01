@@ -64,6 +64,8 @@ class View {
         $pending = $DB->get_records('course_request');
 
         foreach ($pending as $course) {
+
+            
             
             $course = new course_request($course);
 

@@ -28,7 +28,7 @@ require_once('handle_export.php');
 require_once($CFG->libdir.'/adminlib.php');
 require_once($CFG->libdir.'/csvlib.class.php');
 
-require_once($CFG->dirroot . '/admin/tool/courserequeststomanagers/core/export/php-excel.class.php');
+require_once($CFG->dirroot . '/admin/tool/courserequeststomanagers/classes/export/php-excel.class.php');
 
 
 

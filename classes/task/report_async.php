@@ -21,7 +21,12 @@
  * @copyright Catalyst IT
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+
+
 namespace tool_courserequeststomanagers\task;
+
+
 
 /**
  * report_async tasks
@@ -30,6 +35,7 @@ namespace tool_courserequeststomanagers\task;
  * @copyright Catalyst IT
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 class report_async extends \core\task\scheduled_task {
 
     /**
@@ -39,61 +45,43 @@ class report_async extends \core\task\scheduled_task {
         return get_string('pluginname', 'tool_courserequeststomanagers');
     }
 
+    
+
     /**
      * Execute task
      */
     public function execute() {
         global $DB, $CFG;
-        mtrace("tool_courserequeststomanagers Lolo. Valido");
-        echo "tool_courserequeststomanagers Lolo. Valido";
+        
+        require_once($CFG->dirroot.'/admin/tool/courserequeststomanagers/locallib.php');
 
-        // require_once($CFG->dirroot . '/report/coursesize/locallib.php');
+        mtrace("tool_courserequeststomanagers .... ".get_string('begin_process_send_email','tool_courserequeststomanagers'));
+        
+        //  $pending = $DB->get_records('course_request');
 
-        // if (get_config('report_coursesize', 'calcmethod') == 'cron') {
+        //  foreach ($pending as $course) {
+            
+        //      $course = new course_request($course);
 
-        //     mtrace("Generating report_coursesize cache...");
-        //     set_time_limit(0);
+            //  $course->check_shortname_collision();
+            //  if (!$course->can_approve()) {
+            //      continue;
+            //  }
+        //     $category = $course->get_category();
+        //     // $usser = $course->get_requester()->firstname.' '.$course->get_requester()->lastname.' ('.$course->get_requester()->email.')';
+        //     $managers = $this->getManagers($category->id);
+        //     // format_string($course->fullname);
+        //     // $category->get_formatted_name();
+        //     // format_string($course->reason);
+            
 
-        //     // First we delete the old data, then we re-populate it, wrap in a transaction to help keep it together.
-        //     $transaction = $DB->start_delegated_transaction();
-
-        //     // Clean up cache table.
-        //     $DB->delete_records('report_coursesize');
-
-        //     // Generate report_coursesize table.
-        //     $basesql = report_coursesize_filesize_sql();
-        //     $sql = "INSERT INTO {report_coursesize} (course, filesize) $basesql ";
-        //     $DB->execute($sql);
-
-        //     // Now calculate size of backups.
-        //     $basesql = report_coursesize_backupsize_sql();
-
-        //     $sql = "UPDATE {report_coursesize} rc
-        //             SET backupsize = (SELECT bf.filesize FROM ($basesql) bf WHERE bf.course = rc.course)";
-        //     $DB->execute($sql);
-
-        //     $transaction->allow_commit();
-
-        //     // Ignore the result now. The call will only cache the data internally.
-        //     report_coursesize_get_usersizes();
-        //     set_config('coursesizeupdated', time(), 'report_coursesize');
-
-        //     mtrace("report_coursesize cache updated.");
-        // }
-        // // Check if the path ends with a "/" otherwise an exception will be thrown.
-        // $sitedatadir = $CFG->dataroot;
-        // if (is_dir($sitedatadir)) {
-        //     // Only append a "/" if it doesn't already end with one.
-        //     if (substr($sitedatadir, -1) !== '/') {
-        //         $sitedatadir .= '/';
+        //     foreach($manager as $managers){
+        //         mtrace("tool_courserequeststomanagers .... ".get_string('send_email_to','tool_courserequeststomanagers')." ".$manager->firstname." ".$manager->lastname);
         //     }
+            
         // }
-
-        // // Total files usage either hasn't been stored, or is out of date.
-        // $totalusage = get_directory_size($sitedatadir);
-        // set_config('filessize', $totalusage, 'report_coursesize');
-        // set_config('filessizeupdated', time(), 'report_coursesize');
-
-        // mtrace("report_coursesize overall directory size updated");
+        
+        mtrace("tool_courserequeststomanagers ....".get_string('end_process_send_email','tool_courserequeststomanagers'));
+        
     }
 }

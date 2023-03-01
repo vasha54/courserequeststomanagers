@@ -33,3 +33,5 @@ $string['export_data_excel'] = 'Export to Excel';
 $string['send_notification'] = 'Send notification to managers';
 $string['no_managers'] = 'There is no manager for the approval of the course';
 $string['title_report'] = 'Course requests not answered';
+$string['begin_process_send_email'] = 'Beginning of the mailing process';
+$string['end_process_send_email'] = 'End of the mailing process';

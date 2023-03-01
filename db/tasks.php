@@ -22,9 +22,7 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
-$tasks = array(
+ $tasks = array(
     array(
         'classname' => '\tool_courserequeststomanagers\task\report_async',
         'blocking'  => 0,

@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version  = 2023022804;
+$plugin->version  = 2023030102;
 $plugin->requires = 2018120300; // Requires 3.6.
 $plugin->component = 'tool_courserequeststomanagers';
 $plugin->release = '4.1';

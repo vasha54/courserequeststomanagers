@@ -40,20 +40,20 @@ foreach ($classfiles as $classfile) {
         continue;
     }
     if ($classfile->isLink()) {
-        throw new coding_exception('Unexpected symlink in admin/tool/courserequeststomanagers/core/');
+        throw new coding_exception('Unexpected symlink in admin/tool/courserequeststomanagers/classes/');
     }
     if ($classfile->isFile() and substr($classfile->getFilename(), -4) === '.php') {
         require_once($classfile->getPathname());
     }
 }
 
-$classfiles = new DirectoryIterator($CFG->dirroot . '/admin/tool/courserequeststomanagers/core/handle_export');
+$classfiles = new DirectoryIterator($CFG->dirroot . '/admin/tool/courserequeststomanagers/classes/handle_export');
 foreach ($classfiles as $classfile) {
     if ($classfile->isDot()) {
         continue;
     }
     if ($classfile->isLink()) {
-        throw new coding_exception('Unexpected symlink in admin/tool/courserequeststomanagers/core/handle_export');
+        throw new coding_exception('Unexpected symlink in admin/tool/courserequeststomanagers/classes/handle_export');
     }
     if ($classfile->isFile() and substr($classfile->getFilename(), -4) === '.php') {
         require_once($classfile->getPathname());

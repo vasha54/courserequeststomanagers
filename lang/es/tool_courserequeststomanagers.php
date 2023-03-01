@@ -33,4 +33,6 @@ $string['export_data_excel'] = 'Exportar a Excel';
 $string['send_notification'] = 'Enviar notificación a los gestores';
 $string['no_managers'] = 'No existe gestor para la aprobacion del curso';
 $string['title_report'] = 'Solicitudes de cursos no atendidas';
+$string['begin_process_send_email'] = 'Comienzo del proceso del envio de correo';
+$string['end_process_send_email'] = 'Fin del proceso del envio de correo';
 

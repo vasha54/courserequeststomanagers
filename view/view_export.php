@@ -29,7 +29,7 @@ require_once($CFG->libdir.'/adminlib.php');
 require_once($CFG->libdir.'/csvlib.class.php');
 
 
-require_once($CFG->dirroot . '/admin/tool/courserequeststomanagers/core/handle_export/handle_export_pdf.php');
+require_once($CFG->dirroot . '/admin/tool/courserequeststomanagers/classes/handle_export/handle_export_pdf.php');
 
 
 
