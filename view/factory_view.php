@@ -11,6 +11,7 @@ class FactoryView  {
 		$view = new View($_action,$_view);
         switch ($_view) {
             case 0: $view = new TableViewRequestCourse($_action,$_view); break;
+            case 1: $view = new ViewSendEmail($_action, $_view); break;
             case 100: $view = new ViewExport($_action,$_view); break;
         }
 

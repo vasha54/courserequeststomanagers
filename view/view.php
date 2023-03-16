@@ -138,5 +138,53 @@ class View {
 
         return $rows;
     }
+
+    public function generateRowsReportSendEmail(){
+        global $OUTPUT, $CFG, $DB;
+
+        $rows = array();
+        $pending = $DB->get_records('course_request');
+
+        foreach ($pending as $course) {
+
+            
+            
+            $course = new course_request($course);
+
+            // Check here for shortname collisions and warn about them.
+            $course->check_shortname_collision();
+
+            if (!$course->can_approve()) {
+                continue;
+            }
+            $category = $course->get_category();
+            // Fullname of the user who requested the course (with link to profile if current user can view it).
+            $usser = $course->get_requester()->firstname.' '.$course->get_requester()->lastname.' ('.$course->get_requester()->email.')';
+            $managers = Category::getManagers($category->id);
+            
+            foreach($managers as $manager){
+                $row = array();
+                $uicon = $OUTPUT->pix_icon('i/risk_xss', get_string('error'));
+                $row[] = $uicon;
+                $row[] = 'Lododod';
+                $rows[]= $row;
+            }
+            
+            
+        //     $row[] = format_string($course->shortname);
+        //     $row[] = format_string($course->fullname);
+        //    // $row[] = format_text($course->summary, $course->summaryformat);
+        //     $row[] = $category->get_formatted_name();
+        //     $row[] = format_string($course->reason);
+        //     $row[] = $managers;
+    //     $row[] = $OUTPUT->single_button(new moodle_url($baseurl, array('approve' => $course->id, 'sesskey' => sesskey())), get_string('approve'), 'get') .
+    //              $OUTPUT->single_button(new moodle_url($baseurl, array('reject' => $course->id)), get_string('rejectdots'), 'get');
+
+            /// Add the row to the table.
+             
+        }
+
+        return $rows;
+    }
 	
 }
