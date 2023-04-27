@@ -20,6 +20,7 @@
  * @package    tool_courserequeststomanagers
  * @copyright  2014 Catalyst IT {@link http://www.catalyst.net.nz}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @author Luis Andrés Valido  Fajardo <luis.valido1989@gmail.com>
  */
 
 $string['courserequeststomanagers']='Peticiones de curso a los gestores';
@@ -35,4 +36,7 @@ $string['no_managers'] = 'No existe gestor para la aprobacion del curso';
 $string['title_report'] = 'Solicitudes de cursos no atendidas';
 $string['begin_process_send_email'] = 'Comienzo del proceso del envio de correo';
 $string['end_process_send_email'] = 'Fin del proceso del envio de correo';
+$string['statistical_graphs'] = 'Gráficas estadísticas';
+$string['statistical_reports'] = 'Reportes estadísticos';
+
 

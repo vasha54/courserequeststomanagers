@@ -17,9 +17,10 @@
 /**
  * Version information
  *
- * @package    report_coursesize
+ * @package    tool_courserequeststomanagers
  * @copyright  2014 Catalyst IT {@link http://www.catalyst.net.nz}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @author     Luis Andrés Valido Fajardo <luis.valido1989@gmail.com>
  */
 
 
@@ -27,15 +28,11 @@
 require_once(__DIR__ . '/../../../config.php');
 require_once($CFG->libdir . '/adminlib.php');
 require_once($CFG->libdir . '/csvlib.class.php');
-require_once($CFG->dirroot.'/admin/tool/courserequeststomanagers/locallib.php');
 
 
 $view = optional_param('view',0, PARAM_INT);
 $action = optional_param('action',0, PARAM_INT);
 
-
-//  $PAGE->set_url('/admin/tool/courserequeststomangers/index.php',null);
-//  $PAGE->set_pagetype('courses');
 
 $context = context_system::instance();
 $PAGE->set_context($context);
@@ -49,8 +46,7 @@ if($view<100){
     print $OUTPUT->box($desc);
 }
 
-$renderer = FactoryView::factoryMethodView($action,$view);
-$content = $renderer->view();
+$content = \tool_courserequeststomanagers\view\factory_view::factoryMethodView($action,$view)->view();
 print $content;
 
 if($view<100){ 

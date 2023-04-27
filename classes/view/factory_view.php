@@ -24,20 +24,19 @@
  */
 
 
-namespace tool_courserequeststomanagers\handle_export;
+namespace tool_courserequeststomanagers\view;
 defined('MOODLE_INTERNAL') || die();
 
-class handle_export_excel extends handle  {
+class factory_view  {
 
-	 
+	public static function factoryMethodView($_action,$_view){
+		$view = new view($_action,$_view);
+        switch ($_view) {
+             case 0: $view = new table_view_request_course($_action,$_view); break;
+            // case 1: $view = new ViewSendEmail($_action, $_view); break;
+             case 100: $view = new view_export($_action,$_view); break;
+        }
 
-	function __construct ($_action,$_view){
-		parent::__construct($_action,$_view);
+        return $view;
 	}
-
-    public  function generateReport($_rows){
-
-    }
-
-	
 }

@@ -17,18 +17,18 @@
 /**
  * Version information
  *
- * @package    report_coursesize
+ * @package    tool_courserequeststomanagers
  * @copyright  2014 Catalyst IT {@link http://www.catalyst.net.nz}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @author     Luis Andrés Valido Fajardo <luis.valido1989@gmail.com>
  */
+
+
+namespace tool_courserequeststomanagers\view;
 defined('MOODLE_INTERNAL') || die();
 
-require_once(__DIR__ . '/../../../../config.php');
-require_once($CFG->libdir.'/adminlib.php');
-require_once($CFG->libdir.'/csvlib.class.php');
 
-
-class View {
+class view {
 	
 
 	protected $m_action;
@@ -45,17 +45,16 @@ class View {
         $nextVersion = get_string('courserequeststomanagers_next_version', 'tool_courserequeststomanagers');
         print $OUTPUT->box($nextVersion);
 
-        $img = html_writer::start_tag('img', 
+        $img = \html_writer::start_tag('img', 
             array('src' => $CFG->wwwroot.'/admin/tool/courserequeststomanagers/pix/next_version.png',
               'style' => 'width:95%;'));
 
         print $OUTPUT->box($img);
-        print $OUTPUT->single_button(new moodle_url('index.php', array()),
+        print $OUTPUT->single_button(new \moodle_url('index.php', array()),
                                 get_string('go_back', 'tool_courserequeststomanagers'), 
                                 'post', ['class' => 'evaluation_qualitybutton']);
 	}
 
-    
     public function generateRowsReport(){
 
         global $OUTPUT, $CFG, $DB;
@@ -67,7 +66,7 @@ class View {
 
             
             
-            $course = new course_request($course);
+            $course = new \course_request($course);
 
             // Check here for shortname collisions and warn about them.
             $course->check_shortname_collision();
@@ -81,7 +80,7 @@ class View {
                 'includefullname' => true,
                 'link' => user_can_view_profile($course->get_requester()),
             ]);
-            $managers = Category::getStrManagers($category->id,'<br>');
+            $managers = \tool_courserequeststomanagers\core\category::getStrManagers($category->id,'<br>');
             $row = array();
             $row[] = $requesterfullname;
             $row[] = format_string($course->shortname);
@@ -108,7 +107,7 @@ class View {
         $pending = $DB->get_records('course_request');
 
         foreach ($pending as $course) {
-            $course = new course_request($course);
+            $course = new \course_request($course);
 
             // Check here for shortname collisions and warn about them.
             $course->check_shortname_collision();
@@ -121,7 +120,7 @@ class View {
             // Fullname of the user who requested the course (with link to profile if current user can view it).
             $usser = $course->get_requester()->firstname.' '.$course->get_requester()->lastname.' ('.$course->get_requester()->email.')';
             
-            $managers = Category::getStrManagers($category->id,'<br>');
+            $managers = \tool_courserequeststomanagers\core\category::getStrManagers($category->id,'<br>');
             $row = array();
             $row[] = $usser;
             $row[] = format_string($course->fullname);
@@ -138,5 +137,5 @@ class View {
 
         return $rows;
     }
-	
+
 }

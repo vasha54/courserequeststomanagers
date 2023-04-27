@@ -20,6 +20,7 @@
  * @package    tool_courserequeststomanagers
  * @copyright  2014 Catalyst IT {@link http://www.catalyst.net.nz}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @author Luis Andrés Valido Fajardo <luis.valido1989@gmail.com>
  */
 
 defined('MOODLE_INTERNAL') || die;

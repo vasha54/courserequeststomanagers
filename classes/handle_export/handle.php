@@ -27,17 +27,17 @@
 namespace tool_courserequeststomanagers\handle_export;
 defined('MOODLE_INTERNAL') || die();
 
-class handle_export_excel extends handle  {
+abstract class handle  {
 
-	 
+     protected $m_action;
+     protected $m_view;
 
 	function __construct ($_action,$_view){
-		parent::__construct($_action,$_view);
+		
+        $this->m_action = $_action;
+        $this->m_view = $_view;
 	}
 
-    public  function generateReport($_rows){
+	public abstract function generateReport($_rows);
 
-    }
-
-	
 }

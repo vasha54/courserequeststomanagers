@@ -20,6 +20,7 @@
  * @package    tool_courserequeststomanagers
  * @copyright  2014 Catalyst IT {@link http://www.catalyst.net.nz}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @author Luis Andrés Valido Fajardo <luis.valido1989@gmail.com>
  */
 
 $string['courserequeststomanagers']='Course requests to managers';
@@ -35,3 +36,7 @@ $string['no_managers'] = 'There is no manager for the approval of the course';
 $string['title_report'] = 'Course requests not answered';
 $string['begin_process_send_email'] = 'Beginning of the mailing process';
 $string['end_process_send_email'] = 'End of the mailing process';
+$string['statistical_graphs'] = 'Statistical Graphs';
+$string['statistical_reports'] = 'Statistical Reports';
+
+

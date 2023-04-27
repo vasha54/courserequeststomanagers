@@ -15,29 +15,23 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version information
+ * Plugin upgrade code
  *
- * @package    tool_courserequeststomanagers
+ * @package    tool_requestcoursemanager
  * @copyright  2014 Catalyst IT {@link http://www.catalyst.net.nz}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- * @author     Luis Andrés Valido Fajardo <luis.valido1989@gmail.com>
+ * @author Luis Andrés Valido Fajardo <luis.valido1989@gmail.com>
  */
 
-
-namespace tool_courserequeststomanagers\handle_export;
 defined('MOODLE_INTERNAL') || die();
 
-class handle_export_excel extends handle  {
-
-	 
-
-	function __construct ($_action,$_view){
-		parent::__construct($_action,$_view);
-	}
-
-    public  function generateReport($_rows){
-
-    }
-
-	
+/**
+ * Function to upgrade tool_courserequeststomanagers.
+ *
+ * @param int $oldversion the version we are upgrading from
+ * @return bool result
+ */
+function xmldb_tool_courserequeststomanagers_upgrade($oldversion) {
+    global $DB;
+    return true;
 }

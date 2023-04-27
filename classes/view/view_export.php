@@ -17,24 +17,18 @@
 /**
  * Version information
  *
- * @package    report_coursesize
+ * @package    tool_courserequeststomanagers
  * @copyright  2014 Catalyst IT {@link http://www.catalyst.net.nz}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @author     Luis Andrés Valido Fajardo <luis.valido1989@gmail.com>
  */
+
+
+namespace tool_courserequeststomanagers\view;
 defined('MOODLE_INTERNAL') || die();
 
-require_once(__DIR__ . '/../../../../config.php');
-require_once($CFG->dirroot.'/admin/tool/courserequeststomanagers/view/view.php');
-require_once($CFG->libdir.'/adminlib.php');
-require_once($CFG->libdir.'/csvlib.class.php');
 
-
-require_once($CFG->dirroot . '/admin/tool/courserequeststomanagers/classes/handle_export/handle_export_pdf.php');
-
-
-
-
-class ViewExport extends View {
+class view_export extends view {
 
     function __construct($_action,$_view){
         parent::__construct($_action,$_view);
@@ -50,10 +44,10 @@ class ViewExport extends View {
 
         switch ($this->m_action) {
             case 1:
-                $handleExport = new HandleExportPDF($this->m_action,$this->m_view);
+                $handleExport = new \tool_courserequeststomanagers\handle_export\handle_export_pdf($this->m_action,$this->m_view);
             break;
             case 2:
-                $handleExport = new HandleExportEXCEL($this->m_action,$this->m_view);
+                $handleExport = new \tool_courserequeststomanagers\handle_export\handle_export_excel($this->m_action,$this->m_view);
                 break;
             default:
                  admin_externalpage_setup('toolcourserequeststomanagers');
