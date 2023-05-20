@@ -38,5 +38,24 @@ $string['begin_process_send_email'] = 'Comienzo del proceso del envio de correo'
 $string['end_process_send_email'] = 'Fin del proceso del envio de correo';
 $string['statistical_graphs'] = 'Gráficas estadísticas';
 $string['statistical_reports'] = 'Reportes estadísticos';
+$string['notification_status'] = 'Estado de la notificacion';
+$string['notification_description'] = 'Descripcion de la notificacion';
+$string['notification_sent'] = 'Notificacion enviada';
+$string['notification_not_sent'] = 'Notificacion no enviada';
+$string['course_request_notification'] = 'Notificación de solicitud de curso';
+$string['message_email_1'] = 'El usuario ';
+$string['message_email_2'] = ' solicito la creacion y la aprobacion del curso <b><i>';
+$string['message_email_3'] = '</i></b> en una categoria donde usted es gestor. <br><br> <b>El motivo de la solicitud es:</b> ';
+$string['message_email_4'] = '. <br><br>Puede ver la petición y tomar una decision en el siguiente link.';
+$string['description_1'] = 'Se le envio una notificacion via correo al gestor ';
+$string['description_2'] = ' que el usuario ';
+$string['description_4'] = ' realizo una peticion de aprobacion del curso <i>';
+$string['description_3'] = '</i> en una de las categorias donde gestor.';
+$string['message_email_admin_1'] = 'El usuario ';
+$string['message_email_admin_2'] = ' solicito la aprobacion del curso <i>';
+$string['message_email_admin_3'] ='</i> pero no tiene gestor que lo autorice. Para revisar esta solicitud puede acceder al siguiente link ';
+$string['description_admin_1'] = 'La notificacion fue envianda a los administradores de la plataforma pues la solicitud realizada por el usuario ';
+$string['description_admin_2'] = ' para la aprobacion del curso  <i>';
+$string['description_admin_3'] = '</i> no cuenta con gestor para su aprobracion';
 
 

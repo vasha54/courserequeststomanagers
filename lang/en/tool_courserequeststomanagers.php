@@ -38,5 +38,23 @@ $string['begin_process_send_email'] = 'Beginning of the mailing process';
 $string['end_process_send_email'] = 'End of the mailing process';
 $string['statistical_graphs'] = 'Statistical Graphs';
 $string['statistical_reports'] = 'Statistical Reports';
-
+$string['notification_status'] = 'Notification status';
+$string['notification_description'] = 'Notification description';
+$string['notification_sent'] = 'Notification sent';
+$string['notification_not_sent'] = 'Notification not sent';
+$string['course_request_notification'] = 'Course request notification';
+$string['message_email_1'] = 'The user ';
+$string['message_email_2'] = ' requested the creation and approval of the <b><i>';
+$string['message_email_3'] = '</i></b> course in a category where you are a manager. <br><br> <b>The reason for the request is:</b> ';
+$string['message_email_4'] = '. <br><br>You can view the petition and make a decision at the following link.';
+$string['description_1'] = 'A notification was sent via email to the manager ';
+$string['description_2'] = ' that the user ';
+$string['description_3'] = ' made a request for approval of the course <i>';
+$string['description_4'] = '</i> in one of the categories where manager.';
+$string['message_email_admin_1'] = 'The user ';
+$string['message_email_admin_2'] = ' requested the approval of the course <i>';
+$string['message_email_admin_3'] = '</i> but has no manager to authorize it. To review this request you can access the following link ';
+$string['description_admin_1'] = 'The notification was sent to the administrators of the platform because the request made by the user ';
+$string['description_admin_2'] = ' for the approval of the course <i>';
+$string['description_admin_3'] = '</i> does not have a manager for its approval';
 

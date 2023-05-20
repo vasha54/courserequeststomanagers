@@ -103,7 +103,7 @@ class table_view_request_course extends view {
 
             $html.= $OUTPUT->single_button(new \moodle_url('index.php', 
                         array('view'=>1,
-                              'action' => 1,
+                              'action' => 0,
                               'cu_action' =>$_action,
                               'cu_vreport'=>$_view)),
                         get_string('send_notification', 'tool_courserequeststomanagers'), 
