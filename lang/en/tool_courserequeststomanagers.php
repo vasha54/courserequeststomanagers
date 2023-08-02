@@ -57,4 +57,6 @@ $string['message_email_admin_3'] = '</i> but has no manager to authorize it. To 
 $string['description_admin_1'] = 'The notification was sent to the administrators of the platform because the request made by the user ';
 $string['description_admin_2'] = ' for the approval of the course <i>';
 $string['description_admin_3'] = '</i> does not have a manager for its approval';
-
+$string['background_notificaction_email'] = 'Notification via email in the background to managers about course requests.';
+$string['begin_background_notificaction_email'] = 'Start of notification via email in the background to managers about course requests.';
+$string['end_notificaction_email'] = 'End of notification via email in the background to managers about course requests.';

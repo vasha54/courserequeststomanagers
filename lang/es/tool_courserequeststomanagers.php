@@ -57,5 +57,8 @@ $string['message_email_admin_3'] ='</i> pero no tiene gestor que lo autorice. Pa
 $string['description_admin_1'] = 'La notificacion fue envianda a los administradores de la plataforma pues la solicitud realizada por el usuario ';
 $string['description_admin_2'] = ' para la aprobacion del curso  <i>';
 $string['description_admin_3'] = '</i> no cuenta con gestor para su aprobracion';
+$string['background_notificaction_email'] = 'Notificación via email en segundo plano a los gestores sobre solicitudes de cursos.';
+$string['begin_background_notificaction_email'] = 'Inicio de la notificación via email en segundo plano a los gestores sobre solicitudes de cursos.';
+$string['end_notificaction_email'] = 'Fin de la notificación via email en segundo plano a los gestores sobre solicitudes de cursos.';
 
 

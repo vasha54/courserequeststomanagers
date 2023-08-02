@@ -15,16 +15,16 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * report_coursesize tasks
+ * tool_courserequeststomanagers tasks
  *
- * @package   report_coursesize
+ * @package   tool_courserequeststomanagers
  * @copyright Catalyst IT
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
  $tasks = array(
     array(
-        'classname' => '\tool_courserequeststomanagers\task\report_async',
+        'classname' => 'tool_courserequeststomanagers\task\background_notificaction_email',
         'blocking'  => 0,
         'minute'    => '*',
         'hour'      => '*',
