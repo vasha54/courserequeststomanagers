@@ -24,7 +24,17 @@
 
  $tasks = array(
     array(
-        'classname' => 'tool_courserequeststomanagers\task\background_notificaction_email',
+        'classname' => 'tool_courserequeststomanagers\task\background_notification_email',
+        'blocking'  => 0,
+        'minute'    => '*',
+        'hour'      => '*',
+        'day'       => '*',
+        'dayofweek' => '*',
+        'month'     => '*'
+    ),
+
+    array(
+        'classname' => 'tool_courserequeststomanagers\task\background_notification_system',
         'blocking'  => 0,
         'minute'    => '*',
         'hour'      => '*',

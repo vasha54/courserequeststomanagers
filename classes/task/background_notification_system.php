@@ -28,14 +28,14 @@ namespace tool_courserequeststomanagers\task;
 
 defined('MOODLE_INTERNAL') || die();
 
-class background_notification_email extends \core\task\scheduled_task {
+class background_notification_system extends \core\task\scheduled_task {
     /**
      * get_name
      *
      * @return string
      */
     public function get_name() {
-        return get_string('background_notification_email', 'tool_courserequeststomanagers');
+        return get_string('background_notification_system', 'tool_courserequeststomanagers');
     }
 
     /**
@@ -47,7 +47,7 @@ class background_notification_email extends \core\task\scheduled_task {
         global $CFG,$DB; 
         $pending = $DB->get_records('course_request');
         
-        mtrace(get_string('begin_background_notification_email', 'tool_courserequeststomanagers'));
+        mtrace(get_string('begin_background_notification_system', 'tool_courserequeststomanagers'));
 
         $rows = array();
         
@@ -56,7 +56,7 @@ class background_notification_email extends \core\task\scheduled_task {
         }
         
         mtrace(count($pending).'bien todo');
-        mtrace(get_string('end_background_notification_email', 'tool_courserequeststomanagers'));
+        mtrace(get_string('end_background_notification_system', 'tool_courserequeststomanagers'));
 
        
     }

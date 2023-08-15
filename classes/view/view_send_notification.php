@@ -59,12 +59,30 @@ class view_send_notification extends view {
 
             $table = new \html_table();
             $table->attributes['class'] = 'pendingcourserequests generaltable';
-            $table->align = array('center', 'left');
-            $table->head = array(get_string('notification_status','tool_courserequeststomanagers'),
-                                 get_string('notification_description','tool_courserequeststomanagers'));
-            $table->size = array('15%', '85%');
+            $table->align = array('center','center','left','left');
+            $table->head = array(get_string('notification_status_email','tool_courserequeststomanagers'),
+                                 get_string('notification_status_system','tool_courserequeststomanagers'),
+                                 get_string('notification_description_email','tool_courserequeststomanagers'),
+                                 get_string('notification_description_system','tool_courserequeststomanagers'));
+            $table->size = array('12%','12%','38%','38%');
+            $handler_notification = new \tool_courserequeststomanagers\core\notification_handler(); 
+            $table->data = $handler_notification->generateNotifications(); 
+            
 
-            $table->data = $this->generateRowsNotifications(); 
+            for ($i=0; $i < count($table->data) ; $i++) { 
+                if($table->data[$i][0]=true){
+                    $table->data[$i][0]= $OUTPUT->pix_icon('i/grade_correct', get_string('notification_sent', 'tool_courserequeststomanagers'));
+                }else{
+                    $table->data[$i][0]= $OUTPUT->pix_icon('i/grade_incorrect', get_string('notification_not_sent', 'tool_courserequeststomanagers'));
+                }
+
+                if($table->data[$i][1]==true){
+                    $table->data[$i][1]= $OUTPUT->pix_icon('i/grade_correct', get_string('notification_sent', 'tool_courserequeststomanagers'));
+                }else{
+                    $table->data[$i][1]= $OUTPUT->pix_icon('i/grade_incorrect', get_string('notification_not_sent', 'tool_courserequeststomanagers'));
+                }
+
+            }
 
             /// Display the table.
             echo \html_writer::table($table);
@@ -78,7 +96,7 @@ class view_send_notification extends view {
                               'cu_action' =>$_action,
                               'cu_vreport'=>$_view)),
                     get_string('go_back', 'tool_courserequeststomanagers'),
-                    array('class' => 'btn btn-secondary buttonsExportChart','target'=>'blank'));
+                    array('class' => 'btn btn-secondary buttonsExportChart'));
 
             $html.= \html_writer::end_tag('div');
 
@@ -91,7 +109,4 @@ class view_send_notification extends view {
         }
     }
 
-	
-
-    
 }

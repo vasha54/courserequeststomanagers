@@ -18,14 +18,33 @@
  * Version information
  *
  * @package    tool_courserequeststomanagers
- * @copyright  2018 Catalyst IT {@link http://www.catalyst.net.nz}
+ * @copyright  2014 Catalyst IT {@link http://www.catalyst.net.nz}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @author     Luis Andrés Valido Fajardo <luis.valido1989@gmail.com>
  */
 
+
+namespace tool_courserequeststomanagers\view;
 defined('MOODLE_INTERNAL') || die();
 
-$messageproviders = array (
-    // Notify a user that a rule has happened.
-    'notification_request_course' => array ()
-);
+class view_statistical_graphs extends view {
+
+    function __construct($_action,$_view){
+        parent::__construct($_action,$_view);
+    }
+	
+	public function view(){
+
+        $this->m_view = 2;
+        switch ($this->m_action) {
+			default: parent::view(); break;
+		}
+	}
+
+	private function showTableMenu($_action,$_view){
+        global $OUTPUT, $CFG, $DB;
+		
+	}
+
+    
+}

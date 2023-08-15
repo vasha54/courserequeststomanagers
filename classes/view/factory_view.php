@@ -34,6 +34,7 @@ class factory_view  {
         switch ($_view) {
              case 0: $view = new table_view_request_course($_action,$_view); break;
              case 1: $view = new view_send_notification($_action, $_view); break;
+             case 2: $view = new view_statistical_graphs($_action,$_view); break;
              case 100: $view = new view_export($_action,$_view); break;
         }
 
