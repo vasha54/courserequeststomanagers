@@ -69,3 +69,20 @@ $string['description_system_3'] = ' made a request for approval of the course <i
 $string['description_system_4'] = '</i> in one of the categories where manager.';
 $string['link'] = 'View requests';
 
+$string['course_accept'] = 'Course accept';
+$string['not_data_visualization'] = 'Not data visualization';
+$string['course_accept_by_years'] = 'Course accept by years';
+$string['course_accept_by_months'] = 'Course accept by months';
+$string['juanary'] = 'Juanary';
+$string['febrary'] = 'Febrary';
+$string['march'] = 'March';
+$string['april'] = 'April';
+$string['may'] = 'May';
+$string['june'] = 'June';
+$string['july'] = 'July';
+$string['august'] = 'August';
+$string['september'] = 'September';
+$string['octuber'] = 'Octuber';
+$string['november'] = 'November';
+$string['december'] = 'December';
+

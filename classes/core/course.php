@@ -17,17 +17,28 @@
 /**
  * Version information
  *
- * @package    tool_requestcoursemanager
+ * @package    tool_courserequeststomanagers
  * @copyright  2014 Catalyst IT {@link http://www.catalyst.net.nz}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- * @author Luis Andrés Valido Fajardo <luis.valido1989@gmail.com>
+ * @author     Luis Andrés Valido Fajardo <luis.valido1989@gmail.com>
  */
 
+
+namespace tool_courserequeststomanagers\core;
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version  = 2023112607;
-$plugin->requires = 2018120300; // Requires 3.6.
-$plugin->component = 'tool_courserequeststomanagers';
-$plugin->release = '4.1';
-$plugin->maturity  = MATURITY_STABLE;
-$plugin->supported = [39, 400];
+class course {
+    public static function getYearCreated($courseid){
+        $course = \get_course($courseid);
+        $timecreated = $course->timecreated;
+        $year = date("Y",$timecreated);
+        return $year;
+    }
+
+    public static function getMonthCreated($courseid){
+        $course = \get_course($courseid);
+        $timecreated = $course->timecreated;
+        $month = date("m",$timecreated);
+        return $month;
+    }
+}

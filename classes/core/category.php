@@ -74,5 +74,53 @@ class category {
             }
         }
         return $list;
-    }   
+    }
+
+    /**
+    * Cuenta los ucursos recursivos en una categoría
+    * @param int $categoryid id de la categoría
+    * @return int recursive course count
+    */
+    public static function recursiveCourseCount($categoryid) {
+        $coursecat = \core_course_category::get($categoryid);
+        return $coursecat->get_courses_count(array('recursive' => true));
+    }
+    
+    public static function getCountCourseByYear($_categoryid){
+        $totalCourses = category::recursiveCourseCount($_categoryid);
+        $years=array();
+        if ($totalCourses != 0) {
+            $coursecat = \core_course_category::get($_categoryid);
+            $courses = $coursecat->get_courses(array('recursive' => true));
+            foreach ($courses as $index => $course) {
+                $yearCreated= course::getYearCreated($course->id);
+                
+                if(array_key_exists($yearCreated,$years)){
+                    $years[$yearCreated]=$years[$yearCreated]+1;
+                }else{
+                    $years[$yearCreated]=1;
+                }
+            }
+        }
+        return $years;
+    }
+
+    public static function getCountCourseByMonth($_categoryid){
+        $totalCourses = category::recursiveCourseCount($_categoryid);
+        $months=array();
+        if ($totalCourses != 0) {
+            $coursecat = \core_course_category::get($_categoryid);
+            $courses = $coursecat->get_courses(array('recursive' => true));
+            foreach ($courses as $index => $course) {
+                $monthCreated= course::getMonthCreated($course->id);
+                
+                if(array_key_exists($monthCreated,$months)){
+                    $months[$monthCreated]=$months[$monthCreated]+1;
+                }else{
+                    $months[$monthCreated]=1;
+                }
+            }
+        }
+        return $months;
+    }
 }

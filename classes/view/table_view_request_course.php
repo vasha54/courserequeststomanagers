@@ -55,7 +55,7 @@ class table_view_request_course extends view {
             
             $html.= $OUTPUT->single_button(new \moodle_url('index.php', 
                         array('view'=>2,
-                              'action' => 1,
+                              'action' => 0,
                               'cu_action' =>$_action,
                               'cu_vreport'=>$_view)),
                         get_string('statistical_graphs', 'tool_courserequeststomanagers'), 
@@ -118,13 +118,13 @@ class table_view_request_course extends view {
                         'post', ['class' => 'buttonsExportChart']);
 
             
-            $html.= $OUTPUT->single_button(new \moodle_url('index.php', 
+            /*$html.= $OUTPUT->single_button(new \moodle_url('index.php', 
                         array('view'=>3,
                               'action' => 1,
                               'cu_action' =>$_action,
                               'cu_vreport'=>$_view)),
                         get_string('statistical_reports', 'tool_courserequeststomanagers'), 
-                        'post', ['class' => 'buttonsExportChart']);
+                        'post', ['class' => 'buttonsExportChart']);*/
 
             $html.= \html_writer::end_tag('div');
 
