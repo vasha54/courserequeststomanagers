@@ -68,6 +68,9 @@ $string['description_system_2'] = ' que el usuario ';
 $string['description_system_4'] = ' realizo una peticion de aprobacion del curso <i>';
 $string['description_system_3'] = '</i> en una de las categorias donde gestor.';
 $string['link'] = 'Ver las peticiones';
+$string['message_email_requester_1']='Usted ha soicitado la creacion del curso <i>';
+$string['message_email_requester_2']=' </i>. Una persona que puede aprobarselo es:';
+$string['message_email_requester_3']=' . Pongase en contacto con dicha persona en caso de demora.';
 
 $string['course_accept'] = 'Curso acceptado';
 $string['not_data_visualization'] = 'No existen datos para visualizar';

@@ -68,6 +68,9 @@ $string['description_system_2'] = ' that the user ';
 $string['description_system_3'] = ' made a request for approval of the course <i>';
 $string['description_system_4'] = '</i> in one of the categories where manager.';
 $string['link'] = 'View requests';
+$string['message_email_requester_1']='You have requested the creation of the course <i>';
+$string['message_email_requester_2']=' </i>. A person who can approve it is:';
+$string['message_email_requester_3']=' . Contact this person in case of delay.';
 
 $string['course_accept'] = 'Course accept';
 $string['not_data_visualization'] = 'Not data visualization';

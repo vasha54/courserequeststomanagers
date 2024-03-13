@@ -33,6 +33,24 @@ class notification_handler {
     
     }
 
+    public function generateNotificationEmailRequester($_course, $_approval_officer, $_nameSite, $_subject){
+        global $CFG;
+
+        $toUser = $this->generate_email_user($_course->get_requester());
+        $fromUser = $this->generate_email_user(null,$CFG->noreplyaddress,$_nameSite);
+
+        
+        $approvalStr = $_approval_officer->firstname.' '.$_approval_officer->lastname.' ('.$_approval_officer->email.')';
+
+        $textMessaje =get_string('message_email_requester_1','tool_courserequeststomanagers').$_course->fullname;
+        $textMessaje=$textMessaje.get_string('message_email_requester_2','tool_courserequeststomanagers');
+        $textMessaje=$textMessaje.$approvalStr.get_string('message_email_requester_3','tool_courserequeststomanagers');
+
+
+        $send = \email_to_user($toUser, $fromUser, $_subject, $textMessaje, 
+                               $textMessaje, null, null, true);
+    }
+
     public function generateNotificationEmailManager($_manager,$_course,$_subject,
                                                      $_nameSite){
         global $CFG;
@@ -117,6 +135,9 @@ class notification_handler {
         return $result ;
     }
 
+    public function generateNotificationSystemRequester($_course, $_approval_officer, $_nameSite, $_subject){
+
+    }
 
     public function generateNotificationSystemManager($_manager,$_course,
                                                       $_subject){
@@ -236,6 +257,7 @@ class notification_handler {
                                     $course,$subject,$nameSite);
                     $resultSystem = $this->generateNotificationSystemManager($manager,
                                     $course,$subject);
+                    $this->generateNotificationSystemRequester($course,$manager,$nameSite,$subject);                
                     $row[0]=$resultEmail[0];
                     $row[2]=$resultEmail[1];
                     $row[1]=$resultSystem[0];
@@ -250,6 +272,7 @@ class notification_handler {
                                    $course,$subject,$nameSite);
                     $resultSystem = $this->generateNotificationSystemAdmin($admin,
                                     $course,$subject);
+                    $this->generateNotificationSystemRequester($course,$admin,$nameSite,$subject);
                     $row[0]=$resultEmail[0];
                     $row[2]=$resultEmail[1];
                     $row[1]=$resultSystem[0];

@@ -125,7 +125,6 @@ class view {
             $row[] = $category->get_formatted_name();
             $row[] = format_string($course->reason);
             $row[] = $managers;
-    
             $rows[] = $row;
         }
 
